@@ -115,7 +115,7 @@ client.on("message", async function(msg) {
     } else {
       if (ehengel[msg.guild.id].sistem == false) {
       } else if (ehengel[msg.guild.id].sistem == true) {
-        if (msg.member.roles.find("name", "Yönetici")) {
+        if (msg.member.roles.find("name", "EVERYONE VE HERE ATMASINI ISTEDIGINIZ ROL ADI")) {
         } else {
           if (msg.content.includes("@everyone")) {
             msg.delete();
@@ -203,7 +203,7 @@ client.on("messageUpdate", async (oldMsg, newMsg) => {
 
 // BOT DM LOG \\
 client.on("message", message => {
-    const dmchannel = client.channels.find("name", "dm");
+    const dmchannel = client.channels.find("name", "BOT DM LOG KANAL ADI");
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
         dmchannel.sendMessage("", {embed: {
@@ -217,7 +217,7 @@ client.on("message", message => {
 
 // REKLAM \\
 client.on("message", async message => {
-    if (message.member.roles.find("name", "👑👑👑")) return;
+    if (message.member.roles.find("name", "REKLAM ATMASINA IZIN VERILEN ROL ADI")) return;
     let links = message.content.match(/(http[s]?:\/\/)(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/gi);
     if (!links) return;
     if (message.deletable) message.delete();
@@ -246,7 +246,7 @@ client.on('roleDelete', async function(role) {
   let teqnoembed = new Discord.RichEmbed()
     .setTitle("Uyarı")
     .setColor("RED")
-    .setFooter("Saudade Mudita")
+    .setFooter("BURAYA ACIKLAMA YAZIN KISA")
     .setDescription(`\`${role.guild.name}\` adlı sunucunuzda ${isim} adına sahip rol, ${yapanad} adlı kişi tarafından silindi. Ben tekrardan onardım!`)
   role.guild.owner.send(teqnoembed)
 });
@@ -278,7 +278,7 @@ client.on("channelDelete", async channel => {
 
 // BAN LİMİT \\
 client.on("guildBanAdd", async(guild, user) => {
-   if(guild.id !== "701128726913482794") return; //ID kısmına sunucu ID'nizi giriniz.
+   if(guild.id !== "SAHIP ID") return; //ID kısmına sunucu ID'nizi giriniz.
 const banlayan = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
 let banlayancek = guild.members.get(banlayan.exucutor.id)
 if(banlayancek.bot) return;    
@@ -291,7 +291,7 @@ if(banlayancek.bot) return;
   
 let limit = "3" // 3 kısmına ban limitinin kaç olmasını istiyorsanız yazınız.
   if(banlar >= limit) {
-guild.member.kick(user,{reason: "TOXNY, Atıldınız. (Ban limitinizi aştınız.)"})    
+guild.member.kick(user,{reason: "CODE, Atıldınız. (Ban limitinizi aştınız.)"})    
 db.delete(`banlayaninbanlari_${banlayancek.id}`)
 return;      
   } 
@@ -303,7 +303,7 @@ return;
 // GÖRSEL \\
 client.on("message", m => {
 
-let kanal = m.guild.channels.find('name', 'görsel-silme'); // uyari yerine kanal adınızı yazınız.
+let kanal = m.guild.channels.find('name', 'LOG ADI YAZILICAK'); // uyari yerine kanal adınızı yazınız.
 
 let embed = new Discord.RichEmbed()
 .setColor("RANDOM")
@@ -311,7 +311,7 @@ let embed = new Discord.RichEmbed()
 .setTimestamp()
  
   if (m.author.id === m.guild.ownerID) return;
- if (m.channel.id !== "701141591145840801") { // Buraya o kanalın ID'si yazılacaktır.
+ if (m.channel.id !== "GORSEL KANALININ ID SI") { // Buraya o kanalın ID'si yazılacaktır.
     return;
   }
   if (m.author.id === m.guild.ownerID) return;
