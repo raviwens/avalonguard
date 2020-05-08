@@ -105,7 +105,6 @@ client.on('error', e => {
 client.login(ayarlar.token);
 
 // EVERYONE VE HERE \\
-
 let ehengel = JSON.parse(
   fs.readFileSync("./ayarlar/everhereengel.json", "utf8")
 );
@@ -116,19 +115,19 @@ client.on("message", async function(msg) {
     } else {
       if (ehengel[msg.guild.id].sistem == false) {
       } else if (ehengel[msg.guild.id].sistem == true) {
-        if (!msg.member.roles.find("name", "Yönetici")) {
+        if (msg.member.roles.find("name", "Yönetici")) {
         } else {
           if (msg.content.includes("@everyone")) {
             msg.delete();
             msg
-              .reply("Maalesef `everyone` atmana izin veremem!")
+              .reply("maalesef `everyone` atmana izin veremem!")
               .then(msj => msj.delete(3200));
           } else {
           }
           if (msg.content.includes("@here")) {
             msg.delete();
             msg
-              .reply("Maalesef `here` atmana izin veremem!")
+              .reply("maalesef `here` atmana izin veremem!")
               .then(msj => msj.delete(3200));
           } else {
           }
@@ -137,7 +136,6 @@ client.on("message", async function(msg) {
     }
   }
 });
-
 // EVERYONE VE HERE \\
 
 // CAPSLOCK \\

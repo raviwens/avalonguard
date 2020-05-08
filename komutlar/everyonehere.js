@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const fs = require('fs');
 exports.run = (client, msg, args) => {
-  if(msg.author.id != msg.guild.ownerID) {
-    msg.reply("bu komudu sadece sunucu sahibi kullanabilmektedir!")
+   if(!msg.member.roles.has("707796107597447200")) {
+    msg.reply("Bu komutu sadece belirlenen rol kullanabilir güzel kardeşim (YETKİN YOK MK APTALI)")
   } else {
     if(!args[0]) {
       msg.reply("lütfen `aç` veya `kapat` şeklinde bir ayar giriniz.")
@@ -23,7 +23,7 @@ exports.run = (client, msg, args) => {
           } catch (e) {
             console.log(e);
           }
-        } else if(args[0] == "kapa") {
+        } else if(args[0] == "kapatr") {
           try {
             let dosya = JSON.parse(fs.readFileSync('./ayarlar/everhereengel.json', 'utf8'));
             dosya[msg.guild.id] = {
