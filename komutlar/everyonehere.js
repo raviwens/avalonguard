@@ -23,7 +23,7 @@ exports.run = (client, msg, args) => {
           } catch (e) {
             console.log(e);
           }
-        } else if(args[0] == "kapatr") {
+        } else if(args[0] == "kapat") {
           try {
             let dosya = JSON.parse(fs.readFileSync('./ayarlar/everhereengel.json', 'utf8'));
             dosya[msg.guild.id] = {
