@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-    if (!message.member.roles.find("name", "Ꮦ I  ʏᴇᴛᴋɪʟɪ")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Ꮦ I  ʏᴇᴛᴋɪʟɪ*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "BU KOMUTU KULLANACAK YETKILI ROL ADI")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`BU KOMUTU KULLANACAK YETKILI ROL ADI*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     } if(!args[0]) return message.channel.send("🚫 **Lütfen Silinicek Mesaj Miktarını Yazın.!** 🚫");
 message.channel.bulkDelete(args[0]).then(() => {

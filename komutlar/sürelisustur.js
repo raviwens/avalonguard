@@ -3,20 +3,20 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.roles.find("name", "Ꮦ I  sᴜsᴛᴜʀᴍᴀ")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Ꮦ I  sᴜsᴛᴜʀᴍᴀ*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "BU KOMUTU KULLANACAK YETKILI ROL ADI")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`BU KOMUTU KULLANACAK YETKILI ROL ADI*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     } 
  let efeÜye = message.mentions.members.first() || message.guild.members.get(args[0])
   if(!efeÜye) return message.channel.send("Lütfen susturulacak kişiyi etiketleyiniz.");
   if(efeÜye.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Benden yetkili birini susturamam.");
   if (efeÜye.id === message.author.id) return message.channel.send("Kendinizi susturamazsınız.");
-  let efeRol = message.guild.roles.find(`name`, "Muted");
+  let efeRol = message.guild.roles.find(`name`, "Susturuldu");
 
   if(!efeRol){
     try{
       efeRol = await message.guild.createRole({
-        name: "Muted",
+        name: "Susturuldu",
         color: "#666666",
         permissions:[]
       })
