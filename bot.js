@@ -116,7 +116,7 @@ client.on("message", async function(msg) {
     } else {
       if (ehengel[msg.guild.id].sistem == false) {
       } else if (ehengel[msg.guild.id].sistem == true) {
-        if (msg.member.roles.find("name", "👑👑👑")) {
+        if (!msg.member.roles.find("name", "Yönetici")) {
         } else {
           if (msg.content.includes("@everyone")) {
             msg.delete();

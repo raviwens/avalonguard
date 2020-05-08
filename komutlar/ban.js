@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 
 exports.run = async (bot, message, args) => {
       
-    if (!message.member.roles.find("name", "Ꮦ I ʙᴀɴ")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Ꮦ I ʙᴀɴ*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "Ban Hammer")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Ban Hammer*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     } 
 const kisi = message.mentions.users.first()
